@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using ExampleMVC.Models;
+using System.Configuration;
 
 namespace ExampleMVC
 {
@@ -58,11 +59,11 @@ namespace ExampleMVC
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = ConfigurationManager.AppSettings["GoogleClientID"].ToString(),
+                ClientSecret = ConfigurationManager.AppSettings["GoogleKey"].ToString()
+            });
         }
     }
 }
