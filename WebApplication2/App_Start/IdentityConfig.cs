@@ -96,10 +96,10 @@ namespace ExampleMVC
 
             // Registrieren von Anbietern für zweistufige Authentifizierung. Diese Anwendung verwendet telefonische und E-Mail-Nachrichten zum Empfangen eines Codes zum Überprüfen des Benutzers.
             // Sie können Ihren eigenen Anbieter erstellen und hier einfügen.
-            manager.RegisterTwoFactorProvider("Telefoncode", new PhoneNumberTokenProvider<ApplicationUser>
-            {
-                MessageFormat = "Ihr Sicherheitscode lautet {0}"
-            });
+            //manager.RegisterTwoFactorProvider("Telefoncode", new PhoneNumberTokenProvider<ApplicationUser>
+            //{
+            //    MessageFormat = "Ihr Sicherheitscode lautet {0}"
+            //});
             manager.RegisterTwoFactorProvider("E-Mail-Code", new EmailTokenProvider<ApplicationUser>
             {
                 Subject = "Sicherheitscode",
